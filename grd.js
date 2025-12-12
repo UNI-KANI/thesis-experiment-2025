@@ -4563,7 +4563,7 @@ function risk_main2RoutineEachFrame() {
           // 回答なし：ボタンを薄くして、クリックしても無視する
           btn_next_risk_main2.setOpacity(0.2);
       }
-    }    
+    }
     
     // if btn_next_risk_main2 is active this frame...
     if (btn_next_risk_main2.status === PsychoJS.Status.STARTED) {
