@@ -4030,13 +4030,30 @@ function risk_prac2RoutineEachFrame() {
     
     
     // *btn_next_risk_prac2* updates
-    if (t >= 0 && btn_next_risk_prac2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      btn_next_risk_prac2.tStart = t;  // (not accounting for frame time here)
-      btn_next_risk_prac2.frameNStart = frameN;  // exact frame index
-      
-      btn_next_risk_prac2.setAutoDraw(true);
-    }
+    if (t >= 0.0 && btn_next_risk_prac2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      btn_next_risk_prac2.tStart = t;  // (not accounting for frame time here)
+      btn_next_risk_prac2.frameNStart = frameN;  // exact frame index
+      
+      btn_next_risk_prac2.setAutoDraw(true);
+    }
+
+    // ★ ここからカスタマイズ：スライダー回答チェック ★
+    if (btn_next_risk_prac2.status === PsychoJS.Status.STARTED) {
+      // スライダーが未回答(undefined)かチェック
+      if (slider_risk_prac2.getRating() !== undefined && slider_risk_prac2.getRating() !== null) {
+          // 回答あり：ボタンを明るくして、クリックを受け付ける
+          btn_next_risk_prac2.setOpacity(1.0);
+          
+          if (btn_next_risk_prac2.isClicked) { 
+              continueRoutine = false; 
+          }
+      } else {
+          // 回答なし：ボタンを薄くして、クリックしても無視する
+          btn_next_risk_prac2.setOpacity(0.2);
+          // ※ここでクリック判定をしないので進めない
+      }
+    }
     
     
     // if btn_next_risk_prac2 is active this frame...
@@ -4523,15 +4540,30 @@ function risk_main2RoutineEachFrame() {
     }
     
     
-    // *btn_next_risk_main2* updates
-    if (t >= 0 && btn_next_risk_main2.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      btn_next_risk_main2.tStart = t;  // (not accounting for frame time here)
-      btn_next_risk_main2.frameNStart = frameN;  // exact frame index
-      
-      btn_next_risk_main2.setAutoDraw(true);
-    }
-    
+// *btn_next_risk_main2* updates
+    if (t >= 0.0 && btn_next_risk_main2.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      btn_next_risk_main2.tStart = t;  // (not accounting for frame time here)
+      btn_next_risk_main2.frameNStart = frameN;  // exact frame index
+      
+      btn_next_risk_main2.setAutoDraw(true);
+    }
+
+    // ★ ここからカスタマイズ：スライダー回答チェック ★
+    if (btn_next_risk_main2.status === PsychoJS.Status.STARTED) {
+      // スライダーが未回答(undefined)かチェック
+      if (slider_risk_main2.getRating() !== undefined && slider_risk_main2.getRating() !== null) {
+          // 回答あり：ボタンを明るくして、クリックを受け付ける
+          btn_next_risk_main2.setOpacity(1.0);
+          
+          if (btn_next_risk_main2.isClicked) { 
+              continueRoutine = false; 
+          }
+      } else {
+          // 回答なし：ボタンを薄くして、クリックしても無視する
+          btn_next_risk_main2.setOpacity(0.2);
+      }
+    }    
     
     // if btn_next_risk_main2 is active this frame...
     if (btn_next_risk_main2.status === PsychoJS.Status.STARTED) {
