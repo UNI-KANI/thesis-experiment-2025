@@ -4921,7 +4921,7 @@ function thanksRoutineBegin(snapshot) {
     // keep track of whether this Routine was forcibly ended
     routineForceEnded = false;
     thanksClock.reset(routineTimer.getTime());
-    routineTimer.add(5.000000);
+    routineTimer.add(0.0);
     thanksMaxDurationReached = false;
     // update component parameters for each repeat
     psychoJS.experiment.addData('thanks.started', globalClock.getTime());
@@ -4965,7 +4965,7 @@ function thanksRoutineEachFrame() {
       text_thanks.setText('ご協力ありがとうございました。\n５秒後に、自動的に終了します。', false);
     }
     
-    frameRemains = 0.0 + 5.0 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
+    frameRemains = 0.0 + 0.0 - psychoJS.window.monitorFramePeriod * 0.75;// most of one frame period left
     if (text_thanks.status === PsychoJS.Status.STARTED && t >= frameRemains) {
       // keep track of stop time/frame for later
       text_thanks.tStop = t;  // not accounting for scr refresh
@@ -5016,7 +5016,7 @@ function thanksRoutineEnd(snapshot) {
         routineTimer.reset();} else if (thanksMaxDurationReached) {
         thanksClock.add(thanksMaxDuration);
     } else {
-        thanksClock.add(5.000000);
+        thanksClock.add(0.0);
     }
     // Routines running outside a loop should always advance the datafile row
     if (currentLoop === psychoJS.experiment) {
