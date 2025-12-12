@@ -1119,7 +1119,7 @@ function welcomeRoutineEachFrame() {
     // *msg_welcome* updates
     if (t >= 0.0 && msg_welcome.status === PsychoJS.Status.NOT_STARTED) {
       // update params
-      msg_welcome.setText('この実験は10分程度で終了します。\n\n【重要】 この実験は PC（パソコン）専用 です。\n\nスマートフォンやタブレットでは正しく動作しません。\nPCでアクセスしていることを確認し、 \n準備ができたら「次へ」ボタンをクリックして始めてください。\n', false);
+      msg_welcome.setText('この実験は３～５分程度で終了します。\n\n準備ができたら「次へ」ボタンをクリックして始めてください。\n', false);
       // keep track of start time/frame for later
       msg_welcome.tStart = t;  // (not accounting for frame time here)
       msg_welcome.frameNStart = frameN;  // exact frame index
