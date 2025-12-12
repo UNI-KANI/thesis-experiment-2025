@@ -1131,7 +1131,7 @@ function welcomeRoutineEachFrame() {
     // if msg_welcome is active this frame...
     if (msg_welcome.status === PsychoJS.Status.STARTED) {
       // update params
-      msg_welcome.setText('この実験は10分程度で終了します。\n\n【重要】 この実験は PC（パソコン）専用 です。\n\nスマートフォンやタブレットでは正しく動作しません。\nPCでアクセスしていることを確認し、 \n準備ができたら「次へ」ボタンをクリックして始めてください。\n', false);
+      msg_welcome.setText('この実験は3~5分程度で終了します。\n\n準備ができたら「次へ」ボタンをクリックして始めてください。\n', false);
     }
     
     
